@@ -103,7 +103,7 @@ const getHECPayload = async function(message, sourcetype) {
 const sendToHEC = async function(message, sourcetype) {
 
     let headers = {
-        "Authorization": `Splunk ${process.env["SPLUNK_HEC_TOKEN"]}`
+        "Authorization": `Bearer ${process.env["SPLUNK_HEC_TOKEN"]}`
     }
 
     await getHECPayload(message, sourcetype)
