@@ -171,7 +171,7 @@
                                 "label": "Repository URL",
                                 "toolTip": "URL for the function code.",
                                 "type": "Microsoft.Common.TextBox",
-                                "defaultValue": "https://github.com/splunk/azure-functions-splunk.git",
+                                "defaultValue": "https://github.com/daningu/humio-test.git",
                                 "constraints": {
                                     "required": true
                                 }
@@ -179,7 +179,7 @@
                             {
                                 "name": "repoBranch",
                                 "label": "Branch",
-                                "defaultValue": "master",
+                                "defaultValue": "main",
                                 "type": "Microsoft.Common.TextBox",
                                 "constraints": {
                                     "required": true
