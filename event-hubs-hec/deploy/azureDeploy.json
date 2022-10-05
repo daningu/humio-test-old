@@ -198,11 +198,11 @@
 
         "githubRepoURL": {
             "type": "string",
-            "defaultValue": "https://github.com/splunk/azure-functions-splunk.git"
+            "defaultValue": "https://github.com/daningu/humio-test.git"
         },
         "githubRepoBranch": {
             "type": "string",
-            "defaultValue": "master"
+            "defaultValue": "main"
         },
         "githubRepoProject": {
             "type": "string",
