@@ -72,10 +72,8 @@ const getHECPayload = async function(message, sourcetype) {
 
         jsonMessage.records.forEach(function(record) {
             
-            let recordEvent = {
-                JSON.stringify(record)
-            }
-            
+            let recordEvent = JSON.stringify(record)
+                
             if((record.hasOwnProperty('resourceId')) && (record.hasOwnProperty('category'))) {
                 // Get the sourcetype
                 recordEvent["sourcetype"] = getSourceType(sourcetype, record.resourceId, record.category);
@@ -89,9 +87,7 @@ const getHECPayload = async function(message, sourcetype) {
     }
 
     // If we made it here, the JSON does not contain a records[] array, so send the data as-is
-    let payload = {
-        JSON.stringify(jsonMessage)
-    }
+    let payload = JSON.stringify(jsonMessage)
     let eventTimeStamp = getTimeStamp(jsonMessage);
     if(eventTimeStamp) { payload["time"] = eventTimeStamp; }
     return payload
