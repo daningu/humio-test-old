@@ -344,23 +344,6 @@
                         },
 
                         {
-                            "name": "METRICS_LOG_HUB_NAME",
-                            "value": "[parameters('metricsHubName')]"
-                        },
-                        {
-                            "name": "METRICS_LOG_CONSUMER_GROUP",
-                            "value": "[parameters('metricsEventHubConsumerGroup')]"
-                        },
-                        {
-                            "name": "METRICS_LOG_SOURCETYPE",
-                            "value": "[parameters('metricsSourceType')]"
-                        },
-                        {
-                            "name": "AzureWebJobs.metrics.Disabled",
-                            "value": "[parameters('metricsDisabled')]"
-                        },
-
-                        {
                             "name": "DIAGNOSTIC_LOG_HUB_NAME",
                             "value": "[parameters('diagnosticsHubName')]"
                         },
