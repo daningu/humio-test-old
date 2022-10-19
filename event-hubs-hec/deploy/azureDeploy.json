@@ -144,32 +144,6 @@
             "defaultValue": true
         },
 
-        "metricsHubName": {
-            "type": "string",
-            "defaultValue": "insights-metrics-pt1m",
-            "metadata": {
-                "description": "Event Hub name containing metrics"
-            }
-        },
-        "metricsEventHubConsumerGroup": {
-            "type": "string",
-            "defaultValue": "$Default",
-            "metadata": {
-                "description": "Consumer group for the metrics Event Hub"
-            }
-        },
-        "metricsSourceType": {
-            "type": "string",
-            "defaultValue": "azure:metrics",
-            "metadata": {
-                "description": "Splunk source type for the metrics Event Hub"
-            }
-        },
-        "metricsDisabled": {
-            "type": "bool",
-            "defaultValue": true
-        },
-
         "diagnosticsHubName": {
             "type": "string",
             "defaultValue": "insights-logs-diag",
