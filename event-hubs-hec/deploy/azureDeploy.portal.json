@@ -135,24 +135,24 @@
                         }
                     },
                     {
-                        "name": "splunkHECSection",
+                        "name": "LogScaleSection",
                         "type": "Microsoft.Common.Section",
                         "label": "Splunk HTTP Event Collector Details",
                         "elements": [
                             {
-                                "name": "splunkHECEndpoint",
-                                "label": "Splunk HEC Endpoint",
-                                "toolTip": "URL for the Splunk HTTP Event Collector.",
+                                "name": "LogScaleHECURL",
+                                "label": "LogScale HEC URL",
+                                "toolTip": "Your LogScale HEC URL.",
                                 "type": "Microsoft.Common.TextBox",
-                                "placeholder": "https://<YOUR SPLUNK URL>:<PORT>/services/collector/event",
+                                "defaultValue": "https://<YOUR LogScale URL>/api/v1/ingest/hec/raw",
                                 "constraints": {
                                     "required": true
                                 }
                             },
                             {
-                                "name": "splunkHECToken",
-                                "label": "Splunk HEC Token",
-                                "toolTip": "Splunk HTTP Event Collector Token.",
+                                "name": "LogScaleIngestToken",
+                                "label": "LogScale Ingest Token",
+                                "toolTip": "Your LogScale HTTP Event Collector Token.",
                                 "type": "Microsoft.Common.TextBox",
                                 "constraints": {
                                     "required": true
@@ -356,28 +356,6 @@
                                     "required": "[steps('ehAADLogs').ehAADNISection.ehAADNIEnable]"
                                 },
                                 "visible": "[steps('ehAADLogs').ehAADNISection.ehAADNIEnable]"
-                            },
-                            {
-                                "name": "ehAADNISourcetype",
-                                "label": "AAD Non-interactive User Sign-In Sourcetype",
-                                "toolTip": "Splunk sourcetype for Azure AD non-interactive user sign-in data.",
-                                "type": "Microsoft.Common.TextBox",
-                                "defaultValue": "azure:aad:signin:noninteractive",
-                                "placeholder": "azure:aad:signin:noninteractive",
-                                "constraints": {
-                                    "required": "[steps('ehAADLogs').ehAADNISection.ehAADNIEnable]"
-                                },
-                                "visible": "[steps('ehAADLogs').ehAADNISection.ehAADNIEnable]"
-                            },
-                            {
-                                "name": "ehAADNISourcetypeInfo",
-                                "type": "Microsoft.Common.InfoBox",
-                                "visible": "[steps('ehAADLogs').ehAADNISection.ehAADNIEnable]",
-                                "options": {
-                                  "icon": "Info",
-                                  "text": "The base sourcetype will be combined with the event category to construct the full Splunk sourcetype.",
-                                  "uri": "https://github.com/splunk/azure-functions-splunk/tree/event-hubs/event-hubs-hec#splunk-sourcetypes"
-                                }
                             }
                         ]
                     },
@@ -432,16 +410,6 @@
                                     "required": "[steps('ehAADLogs').ehAADSPSection.ehAADSPEnable]"
                                 },
                                 "visible": "[steps('ehAADLogs').ehAADSPSection.ehAADSPEnable]"
-                            },
-                            {
-                                "name": "ehAADSPSourcetypeInfo",
-                                "type": "Microsoft.Common.InfoBox",
-                                "visible": "[steps('ehAADLogs').ehAADSPSection.ehAADSPEnable]",
-                                "options": {
-                                  "icon": "Info",
-                                  "text": "The base sourcetype will be combined with the event category to construct the full Splunk sourcetype.",
-                                  "uri": "https://github.com/splunk/azure-functions-splunk/tree/event-hubs/event-hubs-hec#splunk-sourcetypes"
-                                }
                             }
                         ]
                     }
@@ -532,8 +500,8 @@
             "appName": "[steps('basics').appName]",
 
             "eventHubConnectionString": "[steps('appSettings').ehPolicyKeyApi.primaryConnectionString]",
-            "SplunkEndpoint": "[steps('appSettings').splunkHECSection.splunkHECEndpoint]",
-            "SplunkToken": "[steps('appSettings').splunkHECSection.splunkHECToken]",
+            "SplunkEndpoint": "[steps('appSettings').LogScaleSection.LogScaleHECURL]",
+            "IngestToken": "[steps('appSettings').LogScaleSection.LogScaleIngestToken]",
             "githubRepoURL": "[steps('appSettings').repoSection.repoURL]",
             "githubRepoBranch": "[steps('appSettings').repoSection.repoBranch]",
             "githubRepoProject": "[steps('appSettings').repoSection.repoProject]",
